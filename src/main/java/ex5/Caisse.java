@@ -7,14 +7,19 @@ public class Caisse {
 
 	private String nom;
 	private List<Item> items;
+	private float capaciteMax;
 
-	/** Constructeur
+	/**
+	 * Constructeur
+	 *
 	 * @param nom
+	 * @param capaciteMax
 	 */
-	public Caisse(String nom) {
+	public Caisse(String nom,float capaciteMax) {
 		super();
 		this.nom = nom;
 		this.items = new ArrayList<>();
+		this.capaciteMax=capaciteMax;
 	}
 
 	/** Getter pour l'attribut nom
@@ -44,5 +49,14 @@ public class Caisse {
 	public void setItems(List<Item> items) {
 		this.items = items;
 	}
-	
+
+	public boolean accepteItem(Item item){
+		return (this.capaciteMax-item.getPoids()>=0);
+	}
+	public void addItem(Item item){
+		items.add(item);
+	}
+	public int tailleCaisse (){
+		return items.size();
+	}
 }
