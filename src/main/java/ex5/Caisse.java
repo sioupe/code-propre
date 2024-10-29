@@ -50,12 +50,27 @@ public class Caisse {
 		this.items = items;
 	}
 
+	/**
+	 * renvoie si la caisse peux accepter un item
+	 * @param item
+	 * @return vrai ou faux
+	 */
 	public boolean accepteItem(Item item){
 		return (this.capaciteMax-item.getPoids()>=0);
 	}
+
+	/**
+	 * rajoute un item a la caisse
+	 * @param item
+	 */
 	public void addItem(Item item){
 		items.add(item);
 	}
+
+	/**
+	 * renvoie la taille de la caisse
+	 * @return
+	 */
 	public int tailleCaisse (){
 		return items.size();
 	}
