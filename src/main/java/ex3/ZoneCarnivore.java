@@ -3,8 +3,6 @@ import java.util.List;
 
 public class ZoneCarnivore extends Zone{
 
-	public void addAnimal(Mammifere mammifere) {
-	}
 	
 	public void afficherListeAnimaux(){
 		for (Animal mammifere: animals){

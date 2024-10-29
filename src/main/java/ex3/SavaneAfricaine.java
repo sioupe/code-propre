@@ -4,10 +4,6 @@ import java.util.List;
 public class SavaneAfricaine extends Zone {
 
 	
-	public void addAnimal(Mammifere mammifere) {
-
-	}
-	
 	public void afficherListeAnimaux(){
 		for (Animal mammifere: animals){
 			System.out.println(mammifere.getNom());

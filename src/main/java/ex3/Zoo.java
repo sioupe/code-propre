@@ -8,20 +8,26 @@ public class Zoo {
 	private Aquarium aquarium;
 	
 	public Zoo(String nom){
+
 		this.nom = nom;
+		this.savaneAfricaine =new SavaneAfricaine();
+		this.zoneCarnivore =new ZoneCarnivore();
+		this.fermeReptile =new FermeReptile();
+		this.aquarium =new Aquarium();
 	}
 	
 	public void addAnimal(Animal animal ){
-		if (animal.getClass().getName().equalsIgnoreCase("MAMMIFERE") && animal.getComportementAlimentaire().equalsIgnoreCase("CARNIVORE")){
+		String nomClasse =animal.getClass().getName().substring(animal.getClass().getName().lastIndexOf(".")+1);
+		if (nomClasse.equalsIgnoreCase("MAMMIFERE") && animal.getComportementAlimentaire().equalsIgnoreCase("CARNIVORE")){
 			zoneCarnivore.addAnimal(animal);
 		}
-		else if (animal.getClass().getName().equalsIgnoreCase("MAMMIFERE") && animal.getComportementAlimentaire().equalsIgnoreCase("HERBIVORE")){
+		else if (nomClasse.equalsIgnoreCase("MAMMIFERE") && animal.getComportementAlimentaire().equalsIgnoreCase("HERBIVORE")){
 			savaneAfricaine.addAnimal(animal);
 		}
-		else if (animal.getClass().getName().equalsIgnoreCase("REPTILE")){
+		else if (nomClasse.equalsIgnoreCase("REPTILE")){
 			fermeReptile.addAnimal(animal);
 		}
-		else if (animal.getClass().getName().equalsIgnoreCase("POISSON")){
+		else if (nomClasse.equalsIgnoreCase("POISSON")){
 			aquarium.addAnimal(animal);
 		}
 	}
