@@ -4,12 +4,11 @@ import java.util.List;
 public class ZoneCarnivore extends Zone{
 
 	
-	public void afficherListeAnimaux(){
-		for (Animal mammifere: animals){
-			System.out.println(mammifere.getNom());
-		}
-	}
-	
+
+	/**
+	 * quandtite de nourriture necessaire par jour
+	 * @return la quantite en double
+	 */
 	public double calculerKgsNourritureParJour(){
 		return animals.size() * 10;
 	}

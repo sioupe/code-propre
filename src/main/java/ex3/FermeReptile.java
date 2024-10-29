@@ -4,21 +4,17 @@ import java.util.List;
 public class FermeReptile extends Zone {
 
 
-
+	/**
+	 * constructeur
+	 * @param reptile
+	 */
 	public void addAnimal(Reptile reptile) {
 
 	}
-	
-	public void afficherListeAnimaux(){
-		for (Animal reptile: animals){
-			System.out.println(reptile.getNom());
-		}
-	}
-	
-	public int compterAnimaux(){
-		return animals.size();
-	}
-	
+	/**
+	 * quandtite de nourriture necessaire par jour
+	 * @return la quantite en double
+	 */
 	public double calculerKgsNourritureParJour(){
 		return animals.size() * 0.1;
 	}

@@ -1,12 +1,30 @@
 package ex3;
 public class Zoo {
-
+	/**
+	 * nom du zoo
+	 */
 	private String nom;
+	/**
+	 * zone de la savane africaine du zoo
+	 */
 	private SavaneAfricaine savaneAfricaine;
+	/**
+	 * zone Carnivore du zoo
+	 */
 	private ZoneCarnivore zoneCarnivore;
+	/**
+	 * ferme reptile du zoo
+	 */
 	private FermeReptile fermeReptile;
+	/**
+	 * l'aquarium du zoo
+	 */
 	private Aquarium aquarium;
-	
+
+	/**
+	 * constructeur
+	 * @param nom
+	 */
 	public Zoo(String nom){
 
 		this.nom = nom;
@@ -15,7 +33,11 @@ public class Zoo {
 		this.fermeReptile =new FermeReptile();
 		this.aquarium =new Aquarium();
 	}
-	
+
+	/**
+	 * rajoute un animal dans le zoo et le place dans la zone qui lui convient
+	 * @param animal
+	 */
 	public void addAnimal(Animal animal ){
 		String nomClasse =animal.getClass().getName().substring(animal.getClass().getName().lastIndexOf(".")+1);
 		if (nomClasse.equalsIgnoreCase("MAMMIFERE") && animal.getComportementAlimentaire().equalsIgnoreCase("CARNIVORE")){
@@ -31,11 +53,18 @@ public class Zoo {
 			aquarium.addAnimal(animal);
 		}
 	}
-	
+
+	/**
+	 * affiche tout les animaux du zoo
+	 */
 	public void afficherListeAnimaux(){
+		System.out.println("\nsavane affricaine : ");
 		savaneAfricaine.afficherListeAnimaux();
+		System.out.println("\nzone carnivore : ");
 		zoneCarnivore.afficherListeAnimaux();
+		System.out.println("\nferme des reptiles : ");
 		fermeReptile.afficherListeAnimaux();
+		System.out.println("\nl'aquarium : ");
 		aquarium.afficherListeAnimaux();
 	}
 

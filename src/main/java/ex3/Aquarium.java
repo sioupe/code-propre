@@ -3,16 +3,19 @@ import java.util.List;
 
 public class Aquarium extends Zone{
 
-	
+	/**
+	 *constructeur
+	 * @param poisson
+	 */
 	public void addAnimal(Poisson poisson) {
 	}
-	
-	public void afficherListeAnimaux(){
-		for (Animal poisson: animals){
-			System.out.println(poisson.getNom());
-		}
-	}
-	
+
+
+
+	/**
+	 * quandtite de nourriture necessaire par jour
+	 * @return la quantite en double
+	 */
 	public double calculerKgsNourritureParJour(){
 		return animals.size() * 0.2;
 	}

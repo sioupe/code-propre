@@ -3,7 +3,7 @@ package ex3;
 public class Mammifere extends Animal{
 
 
-    /**
+    /**constructeur
      * @param nom
      * @param comportementAlimentaire
      */
